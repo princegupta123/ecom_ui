@@ -1,0 +1,35 @@
+.navbar{
+  height: 90px;
+  padding: 10px;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.left{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center{
+  flex: 1;
+}
+
+.input{
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  outline: none;
+}
+.right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-weight: 500;
+  font-size: 20px;
+}
