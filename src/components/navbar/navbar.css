@@ -1,6 +1,5 @@
 .navbar{
   height: 90px;
-  padding: 10px;
 }
 .wrapper{
   display: flex;
@@ -26,6 +25,7 @@
 }
 .right{
   flex: 1;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

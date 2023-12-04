@@ -1,0 +1,31 @@
+.cart{
+    margin-top: 50px;
+}
+.pcart{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.cartheading{
+    padding: 10px;
+}
+
+.delete{
+    cursor: pointer;
+    color: red;
+}
+.quantity{
+    padding: 10px;
+    width: 100px;
+    margin-right: 10px;
+}
