@@ -1,0 +1,16 @@
+.btnDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.allProductBtn{
+    padding: 20px;
+    background-color: teal;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
