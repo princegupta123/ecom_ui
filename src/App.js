@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import Product from "./pages/Product";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/wishlist" element ={<Wishlist/>}/>
           <Route path="/cart" element ={<Cart/>}/>
           <Route path="/checkout" element = {<Checkout/>}/>
+          <Route path="/product" element = {<Product/>}/>
          </Routes>
          </BrowserRouter>
         <Footer/>
