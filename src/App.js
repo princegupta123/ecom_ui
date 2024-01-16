@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import "./app.css";
+// import "./app.css";
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -7,12 +7,14 @@ import Login from "./pages/Login";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
-import Product from "./pages/Product";
+import Product from "./pages/Product.js";
+import "./index.css";
 
 
 function App() {
   return (
       <div>
+        
         <Navbar />
          <BrowserRouter>
          <Routes>
@@ -21,10 +23,10 @@ function App() {
           <Route path="/wishlist" element ={<Wishlist/>}/>
           <Route path="/cart" element ={<Cart/>}/>
           <Route path="/checkout" element = {<Checkout/>}/>
-          <Route path="/product" element = {<Product/>}/>
+          <Route path="/products" element = {<Product/>}/>
          </Routes>
          </BrowserRouter>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
    
   );

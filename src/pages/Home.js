@@ -3,6 +3,7 @@ import Banner from "../components/Banner"
 import Categories from "../components/Categories"
 import Products from "../components/Products"
 import NewsLetter from "../components/NewsLetter"
+import Product from './Product'
 
 const Home = () => {
   return (
