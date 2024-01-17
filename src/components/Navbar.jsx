@@ -1,6 +1,7 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Fragment, useState } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import {BellIcon, ShoppingBagIcon, HeartIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import Cart from '../pages/Cart';
 
 
 
@@ -9,29 +10,34 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false)
+  const handleClick =()=>{
+  setOpen(!open);
+  }
   return (
     <Disclosure as="nav" className="bg-gray-800">
         <>
-          <div className="mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative flex h-20 items-center justify-between">
+          <div className="sm:px-6 lg:px-8">
+            {/* first div for large screen */}
+            <div className="relative sm:relative flex h-20 px-3 items-center justify-between">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="h-10 w-auto"
+                    className="h-9 w-auto sm:h-12 w-auto"
                     src="/images/shop-icon.png"
                     alt="Your Company"
                   />
                 </div>
             {/* Search Bar */}
-            <div className="hidden absolute sm:flex flex-grow justify-center items-center mb-2 sm:mb-0">
+            <div className="hidden sm:flex flex-grow justify-center items-center mb-2 sm:mb-0">
               <div className="relative w-50">
                 <input
                   type="text"
                   id="search"
-                  className="bg-gray-700 text-white rounded-md w-full p-2 focus:outline-none focus:ring focus:border-blue-300"
+                  className="bg-gray-700 text-white rounded-md w-full p-2"
                   placeholder="Search..."
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <BellIcon className="h-5 w-5 text-gray-400" />
+                  <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
                 </div>
               </div>
             </div>
@@ -39,15 +45,33 @@ export default function Navbar() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="relative rounded-full bg-gray-800 text-gray-400 mr-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
-
+             {open ? <Cart openCart ={open} setOpenCart = {setOpen}/> : ""}
+               <button
+                  onClick={handleClick}
+                  type="button"
+                  className="relative rounded-full bg-gray-800 text-gray-400 mr-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                >
+                  <span className="absolute -inset-1.5" />
+                  <span className="sr-only">View Cart</span>
+                  <ShoppingBagIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+              
+                <button
+                  type="button"
+                  className="relative rounded-full bg-gray-800 text-gray-400 mr-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                >
+                  <span className="absolute -inset-1.5" />
+                  <span className="sr-only">WishList</span>
+                  <HeartIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
                 {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
+                <Menu as="div" className="relative">
                   <div>
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
@@ -75,7 +99,7 @@ export default function Navbar() {
                             href="#"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Your Profile
+                            My Account
                           </a>
                         )}
                       </Menu.Item>
@@ -92,16 +116,30 @@ export default function Navbar() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/login"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Sign out
+                            Sign In
                           </a>
                         )}
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </Menu>
+              </div>
+            </div>
+               {/* Search Bar in second row in small devices*/}
+               <div className="pb-3 px-2 sm:hidden">
+              <div className="relative w-100">
+                <input
+                  type="text"
+                  id="search"
+                  className="bg-gray-700 text-white rounded-md w-full p-2"
+                  placeholder="Search..."
+                />
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                </div>
               </div>
             </div>
           </div>

@@ -27,9 +27,9 @@ const products = [
   // More products...
 ]
 
-export default function Cart() {
+export default function Cart({openCart, setOpenCart}) {
   const [open, setOpen] = useState(true)
-
+  setOpenCart(open);
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
