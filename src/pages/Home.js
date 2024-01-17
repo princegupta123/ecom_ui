@@ -8,11 +8,11 @@ import Product from './Product'
 const Home = () => {
   return (
     <div>
-        <Banner/>
+        {/* <Banner/> */}
         <Products type = "Flash Sales"/>
-        <Categories/>
-        <Products type = "Best Selling Products"/>
-        <Products type = "Browse All Products"/>
+        {/* <Categories/> */}
+        {/* <Products type = "Best Selling Products"/>
+        <Products type = "Browse All Products"/> */}
         <NewsLetter/>
     </div>
   )
