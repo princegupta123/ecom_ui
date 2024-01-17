@@ -9,7 +9,8 @@ const Home = () => {
   return (
     <div>
         {/* <Banner/> */}
-        <Products type = "Flash Sales"/>
+        <Products/>
+        <Products/>
         {/* <Categories/> */}
         {/* <Products type = "Best Selling Products"/>
         <Products type = "Browse All Products"/> */}

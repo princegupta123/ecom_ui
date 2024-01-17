@@ -9,6 +9,8 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import "./index.css";
 import Product from "./pages/Product";
+import Products from "./pages/Products";
+import Address from "./components/Addresses";
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Route path="/wishlist" element ={<Wishlist/>}/>
           <Route path="/checkout" element = {<Checkout/>}/>
           <Route path="/product" element = {<Product/>}/>
+          <Route path="/products" element = {<Products/>}/>
+          <Route path="/address" element = {<Address/>}/>
          </Routes>
         
         {/* <Footer/> */}

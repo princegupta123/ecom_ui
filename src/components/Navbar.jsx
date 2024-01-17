@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import {BellIcon, ShoppingBagIcon, HeartIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import Cart from '../pages/Cart';
+import { Link } from 'react-router-dom';
 
 
 
@@ -20,6 +21,7 @@ export default function Navbar() {
           <div className="sm:px-6 lg:px-8">
             {/* first div for large screen */}
             <div className="relative sm:relative flex h-20 px-3 items-center justify-between">
+             <Link to = "/">
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-9 w-auto sm:h-12 w-auto"
@@ -27,6 +29,7 @@ export default function Navbar() {
                     alt="Your Company"
                   />
                 </div>
+                </Link>
             {/* Search Bar */}
             <div className="hidden sm:flex flex-grow justify-center items-center mb-2 sm:mb-0">
               <div className="relative w-50">
